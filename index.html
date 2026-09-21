@@ -160,23 +160,97 @@ body{
   z-index:10;
 }
 
-/* Flores */
-.flower{
-  position:absolute;
-  font-size:clamp(42px,5.5vw,76px);
-  filter:drop-shadow(0 0 9px rgba(255,194,0,.65));
-  animation:sway 4s ease-in-out infinite;
+/* ========== GIRASOLES GRANDES ========== */
+.flowers-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
 }
-.f1{left:2%;bottom:8%}
-.f2{left:15%;bottom:0;font-size:52px;animation-delay:.5s}
-.f3{left:29%;bottom:4%;animation-delay:1s}
-.f4{right:28%;bottom:0;font-size:55px;animation-delay:1.4s}
-.f5{right:14%;bottom:7%;font-size:48px;animation-delay:.8s}
-.f6{right:2%;bottom:0;animation-delay:1.8s}
 
-@keyframes sway{
-  0%,100%{transform:rotate(-2deg) translateY(0)}
-  50%{transform:rotate(2deg) translateY(-5px)}
+.sunflower {
+  position: absolute;
+  font-size: clamp(80px, 12vw, 160px);
+  line-height: 1;
+  filter: drop-shadow(0 0 20px rgba(255, 200, 0, 0.7));
+  animation: swayFlower 5s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+/* Posiciones de girasoles grandes */
+.sunflower:nth-child(1) {
+  left: -2%;
+  bottom: -12%;
+  font-size: clamp(100px, 14vw, 180px);
+  animation-delay: 0s;
+  z-index: 1;
+}
+.sunflower:nth-child(2) {
+  left: 6%;
+  bottom: -8%;
+  font-size: clamp(90px, 13vw, 170px);
+  animation-delay: 0.8s;
+  z-index: 2;
+}
+.sunflower:nth-child(3) {
+  left: 18%;
+  bottom: -15%;
+  font-size: clamp(110px, 15vw, 200px);
+  animation-delay: 1.6s;
+  z-index: 3;
+}
+.sunflower:nth-child(4) {
+  left: 32%;
+  bottom: -5%;
+  font-size: clamp(85px, 12vw, 160px);
+  animation-delay: 0.4s;
+  z-index: 1;
+}
+.sunflower:nth-child(5) {
+  right: 30%;
+  bottom: -10%;
+  font-size: clamp(95px, 13vw, 175px);
+  animation-delay: 1.2s;
+  z-index: 2;
+}
+.sunflower:nth-child(6) {
+  right: 16%;
+  bottom: -14%;
+  font-size: clamp(105px, 14vw, 190px);
+  animation-delay: 0.6s;
+  z-index: 3;
+}
+.sunflower:nth-child(7) {
+  right: 4%;
+  bottom: -7%;
+  font-size: clamp(90px, 13vw, 170px);
+  animation-delay: 2s;
+  z-index: 1;
+}
+.sunflower:nth-child(8) {
+  left: 44%;
+  bottom: -18%;
+  font-size: clamp(120px, 16vw, 220px);
+  animation-delay: 1s;
+  z-index: 0;
+}
+
+@keyframes swayFlower {
+  0%, 100% { transform: rotate(-3deg) translateY(0) scale(1); }
+  50% { transform: rotate(3deg) translateY(-12px) scale(1.02); }
+}
+
+/* Sombra suave bajo los girasoles */
+.flowers-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Carteles */
@@ -235,8 +309,6 @@ body{
 
 /* =========================================================
    CARTA / SOBRE REAL
-   Construido con clip-path para evitar el problema del
-   "cuadrado": ahora se ve como un sobre triangular.
 ========================================================= */
 .envelope-area{
   position:absolute;
@@ -262,7 +334,6 @@ body{
   filter:drop-shadow(0 20px 25px rgba(0,0,0,.6));
 }
 
-/* Cuerpo del sobre */
 .env-base{
   position:absolute;
   inset:0;
@@ -272,7 +343,6 @@ body{
   z-index:1;
 }
 
-/* Bolsillo izquierdo */
 .env-left{
   position:absolute;
   inset:0;
@@ -281,7 +351,6 @@ body{
   z-index:5;
 }
 
-/* Bolsillo derecho */
 .env-right{
   position:absolute;
   inset:0;
@@ -290,7 +359,6 @@ body{
   z-index:5;
 }
 
-/* Parte inferior */
 .env-bottom{
   position:absolute;
   inset:0;
@@ -299,7 +367,6 @@ body{
   z-index:7;
 }
 
-/* Solapa superior */
 .flap{
   position:absolute;
   inset:0;
@@ -316,7 +383,6 @@ body{
   z-index:2;
 }
 
-/* Línea decorativa del sobre */
 .envelope:after{
   content:"";
   position:absolute;
@@ -327,7 +393,6 @@ body{
   z-index:20;
 }
 
-/* Sello */
 .seal{
   position:absolute;
   left:50%;
@@ -351,7 +416,6 @@ body{
   transform:translate(-50%,-50%) scale(0);
 }
 
-/* Texto sobre */
 .envelope-label{
   position:absolute;
   left:50%;
@@ -536,6 +600,10 @@ body{
   .envelope.open{
     transform:translateX(calc(-50% - 205px));
   }
+
+  .sunflower {
+    font-size: clamp(70px, 11vw, 140px);
+  }
 }
 
 /* =========================================================
@@ -583,13 +651,18 @@ body{
 
   .signs,.lantern{display:none}
 
-  .flower{font-size:38px}
-  .f1{left:1%;bottom:8%}
-  .f2{left:14%;bottom:0;font-size:34px}
-  .f3{left:27%;bottom:3%;font-size:39px}
-  .f4{right:25%;bottom:0;font-size:35px}
-  .f5{right:12%;bottom:8%;font-size:32px}
-  .f6{right:0;bottom:0;font-size:38px}
+  /* Girasoles grandes adaptados a móvil */
+  .sunflower {
+    font-size: clamp(65px, 18vw, 120px);
+  }
+  .sunflower:nth-child(1) { left: -8%; bottom: -10%; }
+  .sunflower:nth-child(2) { left: 5%; bottom: -6%; }
+  .sunflower:nth-child(3) { left: 18%; bottom: -14%; }
+  .sunflower:nth-child(4) { left: 38%; bottom: -4%; }
+  .sunflower:nth-child(5) { right: 34%; bottom: -9%; }
+  .sunflower:nth-child(6) { right: 18%; bottom: -13%; }
+  .sunflower:nth-child(7) { right: 3%; bottom: -6%; }
+  .sunflower:nth-child(8) { left: 48%; bottom: -16%; }
 
   .envelope-area{
     top:47%;
@@ -616,7 +689,6 @@ body{
     font-size:20px;
   }
 
-  /* En móvil el sobre sube y el mensaje queda debajo */
   .envelope.open{
     transform:translateX(-50%) translateY(-78px) scale(.72);
   }
@@ -681,6 +753,10 @@ body{
     min-height:350px;
   }
 
+  .sunflower {
+    font-size: clamp(55px, 16vw, 100px);
+  }
+
   .envelope-area{
     top:45%;
     width:255px;
@@ -738,6 +814,19 @@ body{
 
 <main class="scene">
 
+  <!-- Campo de girasoles grandes -->
+  <div class="flowers-field">
+    <div class="sunflower">🌻</div>
+    <div class="sunflower">🌻</div>
+    <div class="sunflower">🌻</div>
+    <div class="sunflower">🌻</div>
+    <div class="sunflower">🌻</div>
+    <div class="sunflower">🌻</div>
+    <div class="sunflower">🌻</div>
+    <div class="sunflower">🌻</div>
+    <div class="flowers-shadow"></div>
+  </div>
+
   <div class="signs">
     <div class="sign">Buenas amistades</div>
     <div class="sign">Momentos increíbles</div>
@@ -745,13 +834,6 @@ body{
   </div>
 
   <div class="lantern"></div>
-
-  <div class="flower f1">🌻</div>
-  <div class="flower f2">🌻</div>
-  <div class="flower f3">🌻</div>
-  <div class="flower f4">🌻</div>
-  <div class="flower f5">🌻</div>
-  <div class="flower f6">🌻</div>
 
   <section class="envelope-area">
 
