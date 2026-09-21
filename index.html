@@ -178,75 +178,23 @@ body{
   will-change: transform;
 }
 
-/* Posiciones de girasoles grandes */
-.sunflower:nth-child(1) {
-  left: -2%;
-  bottom: -12%;
-  font-size: clamp(100px, 14vw, 180px);
-  animation-delay: 0s;
-  z-index: 1;
-}
-.sunflower:nth-child(2) {
-  left: 6%;
-  bottom: -8%;
-  font-size: clamp(90px, 13vw, 170px);
-  animation-delay: 0.8s;
-  z-index: 2;
-}
-.sunflower:nth-child(3) {
-  left: 18%;
-  bottom: -15%;
-  font-size: clamp(110px, 15vw, 200px);
-  animation-delay: 1.6s;
-  z-index: 3;
-}
-.sunflower:nth-child(4) {
-  left: 32%;
-  bottom: -5%;
-  font-size: clamp(85px, 12vw, 160px);
-  animation-delay: 0.4s;
-  z-index: 1;
-}
-.sunflower:nth-child(5) {
-  right: 30%;
-  bottom: -10%;
-  font-size: clamp(95px, 13vw, 175px);
-  animation-delay: 1.2s;
-  z-index: 2;
-}
-.sunflower:nth-child(6) {
-  right: 16%;
-  bottom: -14%;
-  font-size: clamp(105px, 14vw, 190px);
-  animation-delay: 0.6s;
-  z-index: 3;
-}
-.sunflower:nth-child(7) {
-  right: 4%;
-  bottom: -7%;
-  font-size: clamp(90px, 13vw, 170px);
-  animation-delay: 2s;
-  z-index: 1;
-}
-.sunflower:nth-child(8) {
-  left: 44%;
-  bottom: -18%;
-  font-size: clamp(120px, 16vw, 220px);
-  animation-delay: 1s;
-  z-index: 0;
-}
+.sunflower:nth-child(1) { left: -2%; bottom: -12%; font-size: clamp(100px, 14vw, 180px); animation-delay: 0s; z-index: 1; }
+.sunflower:nth-child(2) { left: 6%; bottom: -8%; font-size: clamp(90px, 13vw, 170px); animation-delay: 0.8s; z-index: 2; }
+.sunflower:nth-child(3) { left: 18%; bottom: -15%; font-size: clamp(110px, 15vw, 200px); animation-delay: 1.6s; z-index: 3; }
+.sunflower:nth-child(4) { left: 32%; bottom: -5%; font-size: clamp(85px, 12vw, 160px); animation-delay: 0.4s; z-index: 1; }
+.sunflower:nth-child(5) { right: 30%; bottom: -10%; font-size: clamp(95px, 13vw, 175px); animation-delay: 1.2s; z-index: 2; }
+.sunflower:nth-child(6) { right: 16%; bottom: -14%; font-size: clamp(105px, 14vw, 190px); animation-delay: 0.6s; z-index: 3; }
+.sunflower:nth-child(7) { right: 4%; bottom: -7%; font-size: clamp(90px, 13vw, 170px); animation-delay: 2s; z-index: 1; }
+.sunflower:nth-child(8) { left: 44%; bottom: -18%; font-size: clamp(120px, 16vw, 220px); animation-delay: 1s; z-index: 0; }
 
 @keyframes swayFlower {
   0%, 100% { transform: rotate(-3deg) translateY(0) scale(1); }
   50% { transform: rotate(3deg) translateY(-12px) scale(1.02); }
 }
 
-/* Sombra suave bajo los girasoles */
 .flowers-shadow {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 40px;
   background: radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, transparent 70%);
   z-index: 0;
@@ -298,10 +246,8 @@ body{
 .lantern:before{
   content:"";
   position:absolute;
-  left:14px;
-  top:16px;
-  width:24px;
-  height:47px;
+  left:14px; top:16px;
+  width:24px; height:47px;
   border-radius:50%;
   background:#ffd94f;
   box-shadow:0 0 25px #ffbd20;
@@ -328,9 +274,7 @@ body{
   height:100%;
   transform:translateX(-50%);
   cursor:pointer;
-  transition:
-    transform .9s cubic-bezier(.2,.8,.2,1),
-    filter .5s ease;
+  transition: transform .9s cubic-bezier(.2,.8,.2,1), filter .5s ease;
   filter:drop-shadow(0 20px 25px rgba(0,0,0,.6));
 }
 
@@ -471,42 +415,11 @@ body{
   transform:translate(35px,-50%) scale(1);
 }
 
-.message .decor{
-  text-align:center;
-  font-size:22px;
-  margin-bottom:3px;
-}
-
-.message h2{
-  text-align:center;
-  color:#b87800;
-  font-size:22px;
-  margin-bottom:9px;
-}
-
-.message p{
-  font-size:12.5px;
-  line-height:1.45;
-  text-align:justify;
-  margin-bottom:8px;
-}
-
-.message .highlight{
-  text-align:center;
-  color:#bd8100;
-  font-size:13px;
-  font-weight:bold;
-  margin:6px 0;
-}
-
-.signature{
-  text-align:right;
-  margin-top:8px;
-  color:#a46d00;
-  font-size:17px;
-  font-style:italic;
-  font-weight:bold;
-}
+.message .decor{ text-align:center; font-size:22px; margin-bottom:3px; }
+.message h2{ text-align:center; color:#b87800; font-size:22px; margin-bottom:9px; }
+.message p{ font-size:12.5px; line-height:1.45; text-align:justify; margin-bottom:8px; }
+.message .highlight{ text-align:center; color:#bd8100; font-size:13px; font-weight:bold; margin:6px 0; }
+.signature{ text-align:right; margin-top:8px; color:#a46d00; font-size:17px; font-style:italic; font-weight:bold; }
 
 /* =========================================================
    BOTÓN
@@ -541,16 +454,8 @@ body{
   text-align:center;
 }
 
-.feature{
-  font-size:12px;
-  text-shadow:0 2px 5px #000;
-}
-
-.feature span{
-  display:block;
-  font-size:25px;
-  margin-bottom:2px;
-}
+.feature{ font-size:12px; text-shadow:0 2px 5px #000; }
+.feature span{ display:block; font-size:25px; margin-bottom:2px; }
 
 /* Pétalos */
 .petal{
@@ -571,90 +476,33 @@ body{
    TABLET
 ========================================================= */
 @media(max-width:900px) and (min-width:601px){
-
   .scene{width:96vw}
-
-  .signs{
-    transform:scale(.8);
-    transform-origin:top left;
-  }
-
-  .lantern{
-    transform:scale(.8);
-    transform-origin:top right;
-  }
-
-  .envelope-area{
-    width:420px;
-    height:260px;
-  }
-
-  .message{
-    width:330px;
-    height:280px;
-    padding:19px;
-  }
-
+  .signs{transform:scale(.8); transform-origin:top left;}
+  .lantern{transform:scale(.8); transform-origin:top right;}
+  .envelope-area{width:420px; height:260px;}
+  .message{width:330px; height:280px; padding:19px;}
   .message p{font-size:11.5px}
-
-  .envelope.open{
-    transform:translateX(calc(-50% - 205px));
-  }
-
-  .sunflower {
-    font-size: clamp(70px, 11vw, 140px);
-  }
+  .envelope.open{transform:translateX(calc(-50% - 205px));}
+  .sunflower { font-size: clamp(70px, 11vw, 140px); }
 }
 
 /* =========================================================
    MÓVIL
 ========================================================= */
 @media(max-width:600px){
-
   .branch{display:none}
-
-  .moon{
-    width:36px;
-    top:10px;
-    right:9px;
-  }
-
-  .hero{
-    top:12px;
-    width:92vw;
-  }
-
+  .moon{width:36px; top:10px; right:9px;}
+  .hero{top:12px; width:92vw;}
   .pretitle{font-size:18px}
-
-  .hero h1{
-    font-size:clamp(27px,8.5vw,39px);
-  }
-
+  .hero h1{font-size:clamp(27px,8.5vw,39px);}
   .subtitle{font-size:9px}
+  .quote{font-size:9.5px; margin-top:6px;}
+  .quote:before,.quote:after{width:20px; margin:0 4px;}
 
-  .quote{
-    font-size:9.5px;
-    margin-top:6px;
-  }
-
-  .quote:before,.quote:after{
-    width:20px;
-    margin:0 4px;
-  }
-
-  .scene{
-    top:19vh;
-    width:100vw;
-    height:68vh;
-    min-height:390px;
-  }
-
+  .scene{top:19vh; width:100vw; height:68vh; min-height:390px;}
   .signs,.lantern{display:none}
 
-  /* Girasoles grandes adaptados a móvil */
-  .sunflower {
-    font-size: clamp(65px, 18vw, 120px);
-  }
+  .sunflower { font-size: clamp(65px, 18vw, 120px); }
   .sunflower:nth-child(1) { left: -8%; bottom: -10%; }
   .sunflower:nth-child(2) { left: 5%; bottom: -6%; }
   .sunflower:nth-child(3) { left: 18%; bottom: -14%; }
@@ -664,122 +512,50 @@ body{
   .sunflower:nth-child(7) { right: 3%; bottom: -6%; }
   .sunflower:nth-child(8) { left: 48%; bottom: -16%; }
 
-  .envelope-area{
-    top:47%;
-    width:285px;
-    height:190px;
-  }
+  .envelope-area{top:47%; width:285px; height:190px;}
+  .envelope{height:190px;}
+  .envelope-bouquet{top:-30px; font-size:31px;}
+  .envelope-label{font-size:13px;}
+  .seal{width:42px; height:42px; font-size:20px;}
 
-  .envelope{
-    height:190px;
-  }
-
-  .envelope-bouquet{
-    top:-30px;
-    font-size:31px;
-  }
-
-  .envelope-label{
-    font-size:13px;
-  }
-
-  .seal{
-    width:42px;
-    height:42px;
-    font-size:20px;
-  }
-
-  .envelope.open{
-    transform:translateX(-50%) translateY(-78px) scale(.72);
-  }
+  .envelope.open{transform:translateX(-50%) translateY(-78px) scale(.72);}
 
   .message{
-    top:auto;
-    bottom:-2px;
-    left:50%;
-    width:88vw;
-    max-width:340px;
-    height:225px;
+    top:auto; bottom:-2px; left:50%;
+    width:88vw; max-width:340px; height:225px;
     padding:13px 15px;
     transform:translate(-50%,18px) scale(.72);
   }
-
-  .message.show{
-    transform:translate(-50%,0) scale(1);
-  }
-
+  .message.show{transform:translate(-50%,0) scale(1);}
   .message .decor{font-size:17px}
   .message h2{font-size:17px;margin-bottom:6px}
-
-  .message p{
-    font-size:9.5px;
-    line-height:1.34;
-    margin-bottom:5px;
-  }
-
+  .message p{font-size:9.5px; line-height:1.34; margin-bottom:5px;}
   .message .highlight{font-size:10px;margin:3px 0}
+  .signature{font-size:14px; margin-top:5px;}
 
-  .signature{
-    font-size:14px;
-    margin-top:5px;
-  }
-
-  .bottom{
-    bottom:49px;
-    width:94vw;
-  }
-
+  .bottom{bottom:49px; width:94vw;}
   .feature{font-size:8px}
   .feature span{font-size:19px}
 
-  .open-button{
-    bottom:7px;
-    min-width:190px;
-    padding:9px 14px;
-    font-size:10px;
-  }
+  .open-button{bottom:7px; min-width:190px; padding:9px 14px; font-size:10px;}
 }
 
 /* Teléfono pequeño */
 @media(max-width:380px){
-
   .hero h1{font-size:25px}
   .pretitle{font-size:16px}
   .subtitle{font-size:8px}
   .quote{font-size:8.5px}
 
-  .scene{
-    top:18vh;
-    min-height:350px;
-  }
+  .scene{top:18vh; min-height:350px;}
+  .sunflower { font-size: clamp(55px, 16vw, 100px); }
 
-  .sunflower {
-    font-size: clamp(55px, 16vw, 100px);
-  }
-
-  .envelope-area{
-    top:45%;
-    width:255px;
-    height:170px;
-  }
-
+  .envelope-area{top:45%; width:255px; height:170px;}
   .envelope{height:170px}
+  .envelope.open{transform:translateX(-50%) translateY(-65px) scale(.65);}
 
-  .envelope.open{
-    transform:translateX(-50%) translateY(-65px) scale(.65);
-  }
-
-  .message{
-    width:91vw;
-    height:215px;
-    padding:12px 13px;
-  }
-
-  .message p{
-    font-size:9px;
-    line-height:1.3;
-  }
-
+  .message{width:91vw; height:215px; padding:12px 13px;}
+  .message p{font-size:9px; line-height:1.3;}
   .signature{font-size:13px}
 
   .bottom{display:none}
@@ -894,7 +670,7 @@ body{
 </div>
 
 <button class="open-button" id="openButton">
-  💌 Abrir carta para Fernanda
+  💌 Abre la Carta Fernanda
 </button>
 
 <script>
@@ -922,7 +698,7 @@ function toggleLetter(){
   if(open){
     message.classList.remove("show");
     envelope.classList.remove("open");
-    button.textContent="💌 Abre la carta Fernanda";
+    button.textContent="💌 Abre la Carta Fernanda";
   }else{
     envelope.classList.add("open");
     message.classList.add("show");
